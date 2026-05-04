@@ -179,6 +179,22 @@ namespace StudentServiceCenter
                 Console.WriteLine($"{students[id]} added to the queue.");
             }
 
+            // Serve next student
+            static void ServeStudent()
+            {
+                if (serviceQueue.Count == 0)
+                {
+                    Console.WriteLine("No students in queue.");
+                    return;
+                }
+
+                int servedId = serviceQueue.Dequeue();
+
+                // Push to stack for undo
+                servedStack.Push(servedId);
+
+                Console.WriteLine($"{students[servedId]} has been served.");
+            }
 
         }
     }
