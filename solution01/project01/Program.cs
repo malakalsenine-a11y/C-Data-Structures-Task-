@@ -234,7 +234,25 @@ namespace StudentServiceCenter
                 Console.WriteLine($"{students[lastServedId]} returned to the queue.");
             }
 
+            //Bonus (Optional)
 
+            // Show last served student
+            static void ShowLastServed()
+            {
+                if (servedStack.Count == 0)
+                {
+                    Console.WriteLine("No students served yet.");
+                    return;
+                }
+
+                int lastId = servedStack.Peek();
+
+                Console.WriteLine($"Last served: {students[lastId]}");
+            }
+
+           
+
+           
 
         }
     }
