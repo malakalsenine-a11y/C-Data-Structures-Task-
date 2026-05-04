@@ -139,6 +139,23 @@ namespace StudentServiceCenter
                 Console.WriteLine("Student removed successfully.");
             }
 
+            // Display all students
+            static void ShowAllStudents()
+            {
+                if (students.Count == 0)
+                {
+                    Console.WriteLine("No students found.");
+                    return;
+                }
+
+                Console.WriteLine("\n--- Students List ---");
+
+                foreach (var student in students)
+                {
+                    Console.WriteLine($"ID: {student.Key}, Name: {student.Value}");
+                }
+            }
+
 
         }
     }
