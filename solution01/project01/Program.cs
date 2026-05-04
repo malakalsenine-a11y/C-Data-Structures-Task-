@@ -120,6 +120,26 @@ namespace StudentServiceCenter
 
                 Console.WriteLine("Student updated successfully.");
             }
+
+            // Remove student from Dictionary
+            static void RemoveStudent()
+            {
+                Console.Write("Enter Student ID to remove: ");
+                int id = int.Parse(Console.ReadLine());
+
+                // Check if student exists
+                if (!students.ContainsKey(id))
+                {
+                    Console.WriteLine("Student not found!");
+                    return;
+                }
+
+                students.Remove(id);
+
+                Console.WriteLine("Student removed successfully.");
+            }
+
+
         }
     }
 }
