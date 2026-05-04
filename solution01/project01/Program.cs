@@ -215,6 +215,27 @@ namespace StudentServiceCenter
                 Console.WriteLine($"Total in queue: {serviceQueue.Count}");
             }
 
+            //3. Undo Service (Stack)
+
+            // Undo last served student
+            static void UndoService()
+            {
+                if (servedStack.Count == 0)
+                {
+                    Console.WriteLine("No service to undo.");
+                    return;
+                }
+
+                int lastServedId = servedStack.Pop();
+
+                // Return student back to queue
+                serviceQueue.Enqueue(lastServedId);
+
+                Console.WriteLine($"{students[lastServedId]} returned to the queue.");
+            }
+
+
+
         }
     }
 }
