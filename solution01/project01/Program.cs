@@ -5,6 +5,9 @@ namespace StudentServiceCenter
 {
     internal class Program
     {
+        //1. Student Registration (Dictionary)
+  
+
         // Dictionary → StudentID , StudentName
         static Dictionary<int, string> students = new Dictionary<int, string>();
 
@@ -154,6 +157,26 @@ namespace StudentServiceCenter
                 {
                     Console.WriteLine($"ID: {student.Key}, Name: {student.Value}");
                 }
+            }
+
+            //2. Service Waiting Line (Queue)
+
+            // Add student to service queue
+            static void JoinQueue()
+            {
+                Console.Write("Enter Student ID to join queue: ");
+                int id = int.Parse(Console.ReadLine());
+
+                // Check if student exists
+                if (!students.ContainsKey(id))
+                {
+                    Console.WriteLine("Student not found!");
+                    return;
+                }
+
+                serviceQueue.Enqueue(id);
+
+                Console.WriteLine($"{students[id]} added to the queue.");
             }
 
 
