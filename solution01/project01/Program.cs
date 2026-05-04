@@ -196,6 +196,25 @@ namespace StudentServiceCenter
                 Console.WriteLine($"{students[servedId]} has been served.");
             }
 
+            // Display all students in queue
+            static void ShowQueue()
+            {
+                if (serviceQueue.Count == 0)
+                {
+                    Console.WriteLine("Queue is empty.");
+                    return;
+                }
+
+                Console.WriteLine("\n--- Waiting Queue ---");
+
+                foreach (int id in serviceQueue)
+                {
+                    Console.WriteLine($"ID: {id}, Name: {students[id]}");
+                }
+
+                Console.WriteLine($"Total in queue: {serviceQueue.Count}");
+            }
+
         }
     }
 }
