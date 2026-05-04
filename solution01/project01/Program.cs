@@ -99,6 +99,27 @@ namespace StudentServiceCenter
                 Console.WriteLine("Student added successfully.");
             }
 
+            // Update existing student name
+            static void UpdateStudent()
+            {
+                Console.Write("Enter Student ID to update: ");
+                int id = int.Parse(Console.ReadLine());
+
+                // Check if student exists
+                if (!students.ContainsKey(id))
+                {
+                    Console.WriteLine("Student not found!");
+                    return;
+                }
+
+                Console.Write("Enter new name: ");
+                string newName = Console.ReadLine();
+
+                // Update value
+                students[id] = newName;
+
+                Console.WriteLine("Student updated successfully.");
+            }
         }
     }
 }
