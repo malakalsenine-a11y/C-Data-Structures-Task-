@@ -77,6 +77,28 @@ namespace StudentServiceCenter
                         break;
                 }
             }
+
+            // Add new student
+            static void AddStudent()
+            {
+                Console.Write("Enter Student ID: ");
+                int id = int.Parse(Console.ReadLine());
+
+                // Check if ID already exists
+                if (students.ContainsKey(id))
+                {
+                    Console.WriteLine("Student ID already exists!");
+                    return;
+                }
+
+                Console.Write("Enter Student Name: ");
+                string name = Console.ReadLine();
+
+                students.Add(id, name);
+
+                Console.WriteLine("Student added successfully.");
+            }
+
         }
     }
 }
